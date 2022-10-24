@@ -1,0 +1,33 @@
+﻿@model ReverseViewModel
+
+<div>
+    <head>
+        <title>ReverseApi</title>
+    </head>
+    <body>
+    <div style="width:60%; margin:0 auto;padding:20px;">
+    @using (Html.BeginForm("Index", "Reverse", FormMethod.Post))
+    {
+        <div class="row">
+            <div class="col-md-6" >
+                @Html.Label("Type a value:")
+                @Html.EditorFor(x => x.StringValue)
+            </div>
+            <div class="col-md-6" >
+                <button>Submit</button>
+            </div>
+        </div>
+        @if (Model.ReverseStringValue != null)
+        {
+            <div class="row" style="padding-top: 50px">
+                <div class="col-md-8" style="text-align: center; font-size: 18px">
+                    @Html.Label("Result:")
+                    @Html.DisplayFor(x => x.ReverseStringValue)
+                </div>
+            </div>
+        }
+    }
+    </div>
+    </body>
+
+</div>
